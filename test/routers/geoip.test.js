@@ -1,6 +1,10 @@
-const request = require('../config/request')
+const getRequest = require('../config/request')
 
-const basePath = process.env.API_URL ? '/' : '/geoip/'
+const API_URL = process.env.API_URL_GEO_IP
+
+// This is needed to build supertest dynamically
+const request = getRequest(API_URL)
+const basePath = API_URL ? '/' : '/geoip/'
 
 describe('GeoIP API', () => {
 

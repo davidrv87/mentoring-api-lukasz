@@ -7,7 +7,7 @@
     "start": "node src/index.js",
     "start-watch": "nodemon --ext js src/index.js",
     "test:local": "jest --runInBand --config ./test/jest.config.js",
-    "test:deployed": "env-cmd -f ./config/test.env jest --runInBand --config ./test/jest.config.js"
+    "test:remote": "env-cmd -f ./config/test.env jest --runInBand --config ./test/jest.config.js"
   },
   "author": "",
   "license": "ISC",

@@ -7,24 +7,6 @@ const basePath = API_URL ? '/' : '/albums/'
 
 describe('Albums', () => {
 
-
-    // it('should return 100 albums 3 properties in each object in the array', async () => {
-    //     const response = await request
-
-    //     .get(basePath)
-    //     expect()
-    //     expect(200)
-    //     const albums = Object.keys(response.body)
-    //     expect(albums.length).toBe(100)
-    //     expect(albums).toHaveLength(3)
-
-    //     // ogarnąć jak zwrócic liczbe 3 properties z object i array
-        
-    
-
-    
-    // })
-
     it('should check the response type to be Array', async ()=> {
         const response = await request
 
@@ -32,6 +14,16 @@ describe('Albums', () => {
         expect(200)
         expect(Array.isArray(response.body)).toBeTruthy()
 
+    })
+
+    it('should return 100 albums in the array', async () => {
+        const response = await request
+
+        .get(basePath)
+        expect(200)
+        const albums = response.body
+        expect(albums).toHaveLength(100)
+  
     })
 
     it('should return userId, id and title properties', async () => {

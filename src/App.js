@@ -1,6 +1,7 @@
 const express = require('express')
 const geoIpRouter = require('./routers/geoIP')
 const wheaterRouter = require('./routers/goWheater')
+const placeHolder = require('./routers/placeHolder')
 
 const app = express()
 
@@ -8,5 +9,6 @@ const app = express()
 app.use(express.json())
 app.use(geoIpRouter)
 app.use(wheaterRouter)
+app.use(placeHolder)
 
 module.exports = app

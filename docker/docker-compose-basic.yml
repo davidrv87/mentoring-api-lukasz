@@ -1,0 +1,12 @@
+version: "3.9"
+
+# Same as
+# docker container run -d -p 4444:80 --name my_apache_server_compose -v "$PWD"/html-sample:/usr/local/apache2/htdocs/ httpd:alpine
+
+services:
+  my_apache_server_compose:
+    image: httpd:alpine
+    volumes:
+      - ./html-sample:/usr/local/apache2/htdocs/
+    ports:
+      - '4444:80'
